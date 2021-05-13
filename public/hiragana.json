@@ -1,0 +1,67 @@
+[
+   [
+    { "id": 1, "syll": "a", "code": "&#12354;", "isLastInRow": false },
+    { "id": 2, "syll": "ka", "code": "&#12363;", "isLastInRow": false },
+    { "id": 3, "syll": "sa", "code": "&#12373;", "isLastInRow": false },
+    { "id": 4, "syll": "ta", "code": "&#12383;", "isLastInRow": false },
+    { "id": 6, "syll": "na", "code": "&#12394;", "isLastInRow": false },
+    { "id": 7, "syll": "ha", "code": "&#12399;", "isLastInRow": false },
+    { "id": 8, "syll": "ma", "code": "&#12414;", "isLastInRow": false },
+    { "id": 9, "syll": "ya", "code": "&#12420;", "isLastInRow": false },
+    { "id": 10, "syll": "ra", "code": "&#12425;", "isLastInRow": false },
+    { "id": 11, "syll": "wa", "code": "&#12431;", "isLastInRow": false },
+    { "id": 12, "syll": "n", "code": "&#12435;", "isLastInRow": true }
+  ],
+  [
+    { "id": 13, "syll": "i", "code": "&#12356;", "isLastInRow": false },
+    { "id": 14, "syll": "ki", "code": "&#12365;", "isLastInRow": false },
+    { "id": 15, "syll": "shi", "code": "&#12375;", "isLastInRow": false },
+    { "id": 16, "syll": "chi", "code": "&#12385;", "isLastInRow": false },
+    { "id": 17, "syll": "ni", "code": "&#12395;", "isLastInRow": false },
+    { "id": 18, "syll": "hi", "code": "&#12402;", "isLastInRow": false },
+    { "id": 19, "syll": "mi", "code": "&#12415;", "isLastInRow": false },
+    { "id": 20, "syll": "none", "code": "none", "isLastInRow": false },
+    { "id": 21, "syll": "ri", "code": "&#12426;", "isLastInRow": false },
+    { "id": 22, "syll": "wi", "code": "&#12432;", "isLastInRow": false },
+    { "id": 23, "syll": "none", "code": "none", "isLastInRow": true }
+  ],
+  [
+    { "id": 24, "syll": "u", "code": "&#12358;", "isLastInRow": false },
+    { "id": 25, "syll": "ku", "code": "&#12367;", "isLastInRow": false },
+    { "id": 26, "syll": "su", "code": "&#12377;", "isLastInRow": false },
+    { "id": 27, "syll": "tsu", "code": "&#12388;", "isLastInRow": false },
+    { "id": 28, "syll": "nu", "code": "&#12396;", "isLastInRow": false },
+    { "id": 29, "syll": "fu", "code": "&#12405;", "isLastInRow": false },
+    { "id": 30, "syll": "mu", "code": "&#12416;", "isLastInRow": false },
+    { "id": 31, "syll": "yu", "code": "&#12422;", "isLastInRow": false },
+    { "id": 32, "syll": "ru", "code": "&#12427;", "isLastInRow": false },
+    { "id": 33, "syll": "none", "code": "none", "isLastInRow": false },
+    { "id": 34, "syll": "none", "code": "none", "isLastInRow": true }
+  ],
+  [
+    { "id": 35, "syll": "e", "code": "&#12360;", "isLastInRow": false },
+    { "id": 36, "syll": "ke", "code": "&#12369;", "isLastInRow": false },
+    { "id": 37, "syll": "se", "code": "&#12379;", "isLastInRow": false },
+    { "id": 38, "syll": "te", "code": "&#12390;", "isLastInRow": false },
+    { "id": 39, "syll": "ne", "code": "&#12397;", "isLastInRow": false },
+    { "id": 40, "syll": "he", "code": "&#12408;", "isLastInRow": false },
+    { "id": 41, "syll": "me", "code": "&#12417;", "isLastInRow": false },
+    { "id": 42, "syll": "none", "code": "none", "isLastInRow": false },
+    { "id": 43, "syll": "re", "code": "&#12428;", "isLastInRow": false },
+    { "id": 44, "syll": "we", "code": "&#12433;", "isLastInRow": false },
+    { "id": 45, "syll": "none", "code": "none", "isLastInRow": true }
+  ],
+  [
+    { "id": 46, "syll": "o", "code": "&#12362;", "isLastInRow": false },
+    { "id": 47, "syll": "ko", "code": "&#12371;", "isLastInRow": false },
+    { "id": 48, "syll": "so", "code": "&#12381;", "isLastInRow": false },
+    { "id": 49, "syll": "to", "code": "&#12392;", "isLastInRow": false },
+    { "id": 50, "syll": "no", "code": "&#12398;", "isLastInRow": false },
+    { "id": 51, "syll": "ho", "code": "&#12411;", "isLastInRow": false },
+    { "id": 52, "syll": "mo", "code": "&#12418;", "isLastInRow": false },
+    { "id": 53, "syll": "yo", "code": "&#12424;", "isLastInRow": false },
+    { "id": 54, "syll": "ro", "code": "&#12429;", "isLastInRow": false },
+    { "id": 55, "syll": "wo", "code": "&#12434;", "isLastInRow": false },
+    { "id": 56, "syll": "none", "code": "none", "isLastInRow": true }
+  ]
+]
