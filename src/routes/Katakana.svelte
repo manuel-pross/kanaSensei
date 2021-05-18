@@ -1,20 +1,35 @@
 <script>
-  import KanaList from "../components/KanaList.svelte";
-  import Footer from "../components/Footer.svelte";
+    import { onMount } from "svelte";
 
-  let katakana = [];
+    import KanaList from "../components/KanaList.svelte";
+    import LoadingSpinner from "../components/LoadingSpinner.svelte";
 
-  fetch("./katakana.json")
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("Fetching meetups failed, please try again.");
-      }
-      return res.json();
-    })
-    .then((data) => {
-      katakana = data;
+    let katakana = [];
+    let isLoading = true;
+
+    onMount(() => {
+        fetch("./katakana.json")
+            .then((res) => {
+                if (!res.ok) {
+                    throw new Error(
+                        "Fetching katakana.json failed, please try again."
+                    );
+                }
+                return res.json();
+            })
+            .then((data) => {
+                katakana = data;
+                isLoading = false;
+            })
+            .catch((err) => {
+                isLoading = false;
+                console.log(err);
+            });
     });
 </script>
 
-<KanaList kana={katakana} />
-<Footer />
+{#if isLoading}
+    <LoadingSpinner />
+{:else}
+    <KanaList kana={katakana} />
+{/if}

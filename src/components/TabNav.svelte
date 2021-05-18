@@ -1,7 +1,7 @@
 <script>
     import Tab from "./Tab.svelte";
 
-    let selectedTab = "Hiragana";
+    export let selectedTab = "Hiragana";
 
     function handleClick(e) {
         selectedTab = e.detail;
