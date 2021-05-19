@@ -1,6 +1,19 @@
 <script>
+    import { kanas } from "./../kana-stores";
+
     export let id;
+    export let syll;
     export let code;
+
+    // $kanas = [
+    //     {
+    //         id: id,
+    //         syll: syll,
+    //         code: code,
+    //         completed: false,
+    //     },
+    //     ...$kanas,
+    // ];
 
     let checked = true;
 </script>
@@ -48,6 +61,7 @@
 
         label {
             top: 7px;
+            cursor: pointer;
         }
     }
 </style>

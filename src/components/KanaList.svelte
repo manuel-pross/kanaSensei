@@ -87,6 +87,7 @@
                         {#if mode === "select"}
                             <KanaCheckBox
                                 id={character.id}
+                                syll={character.syll}
                                 code={character.code}
                             />
                         {:else}
