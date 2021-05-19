@@ -28,8 +28,10 @@
     });
 </script>
 
-{#if isLoading}
-    <LoadingSpinner />
-{:else}
-    <KanaList kana={hiragana} />
-{/if}
+<div class="wrapper">
+    {#if isLoading}
+        <LoadingSpinner />
+    {:else}
+        <KanaList kana={hiragana} />
+    {/if}
+</div>

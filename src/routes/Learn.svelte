@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
 
-    import KanaSelectionTable from "../components/KanaSelectionTable.svelte";
+    import KanaList from "../components/KanaList.svelte";
     import LoadingSpinner from "../components/LoadingSpinner.svelte";
     import TabNav from "../components/TabNav.svelte";
 
@@ -48,15 +48,29 @@
     });
 </script>
 
+<style>
+    .selection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+</style>
+
 <div class="wrapper">
     {#if isLoading}
         <LoadingSpinner />
     {:else}
-        <TabNav bind:selectedTab />
-        {#if selectedTab === "Hiragana"}
-            <KanaSelectionTable kana={hiragana} />
-        {:else}
-            <KanaSelectionTable kana={katakana} />
-        {/if}
+        <div class="selection">
+            <TabNav bind:selectedTab />
+            {#if selectedTab === "Hiragana"}
+                <!-- <KanaSelectionTable kana={hiragana} /> -->
+                <KanaList kana={hiragana} mode="select" />
+            {:else}
+                <!-- <KanaSelectionTable kana={katakana} /> -->
+                <KanaList kana={katakana} mode="select" />
+            {/if}
+        </div>
     {/if}
 </div>

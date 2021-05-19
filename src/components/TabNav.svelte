@@ -9,13 +9,19 @@
 </script>
 
 <style>
-    .tab-list {
+    div {
         width: 100%;
         border-bottom: 1px solid var(--red-2);
     }
+
+    @media only screen and (min-width: 768px) {
+        div {
+            max-width: 900px;
+        }
+    }
 </style>
 
-<div class="tab-list">
+<div>
     <Tab
         tabHeading={"Hiragana"}
         on:selectedTab={handleClick}

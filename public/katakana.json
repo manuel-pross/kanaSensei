@@ -1,7 +1,7 @@
 [
    [
     { "id": 1, "syll": "a", "code": "&#12450;", "isLastInRow": false },
-    { "id": 2, "syll": "ka", "code": "&#12458;", "isLastInRow": false },
+    { "id": 2, "syll": "ka", "code": "&#12459;", "isLastInRow": false },
     { "id": 3, "syll": "sa", "code": "&#12469;", "isLastInRow": false },
     { "id": 4, "syll": "ta", "code": "&#12479;", "isLastInRow": false },
     { "id": 6, "syll": "na", "code": "&#12490;", "isLastInRow": false },

@@ -8,6 +8,8 @@
 <style>
     div {
         position: relative;
+        width: fit-content;
+        height: fit-content;
     }
 
     input[type="checkbox"] {
@@ -18,6 +20,7 @@
         border-radius: 3px;
         background-color: var(--gray-1);
         margin-bottom: 0;
+        padding: 0;
         transition: 0.15s ease-in-out;
     }
 
@@ -27,6 +30,7 @@
     }
 
     label {
+        display: block;
         position: absolute;
         top: 4px;
         right: 50%;
@@ -34,6 +38,17 @@
         transform: translateX(50%);
         color: var(--white);
         margin-bottom: 0;
+    }
+
+    @media only screen and (min-width: 768px) {
+        input[type="checkbox"] {
+            width: 45px;
+            height: 45px;
+        }
+
+        label {
+            top: 7px;
+        }
     }
 </style>
 

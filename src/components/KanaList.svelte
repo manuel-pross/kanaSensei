@@ -1,7 +1,9 @@
 <script>
     import KanaButton from "./KanaButton.svelte";
+    import KanaCheckBox from "./KanaCheckBox.svelte";
 
     export let kana = [];
+    export let mode = "show";
 </script>
 
 <style>
@@ -45,11 +47,11 @@
         }
     }
 
-    @media only screen and (min-width: 768px) and (orientation: landscape) {
+    /* @media only screen and (min-width: 768px) and (orientation: landscape) {
         table {
             overflow-y: scroll;
         }
-    }
+    } */
 
     @media only screen and (min-width: 1024px) {
         table {
@@ -63,41 +65,46 @@
     }
 </style>
 
-<div class="wrapper">
-    <table>
+<table>
+    <tr>
+        <th>-</th>
+        <th>k-</th>
+        <th>s-</th>
+        <th>t-</th>
+        <th>n-</th>
+        <th>h-</th>
+        <th>m-</th>
+        <th>y-</th>
+        <th>r-</th>
+        <th>w-</th>
+        <th>n</th>
+    </tr>
+    {#each kana as row}
         <tr>
-            <th>-</th>
-            <th>k-</th>
-            <th>s-</th>
-            <th>t-</th>
-            <th>n-</th>
-            <th>h-</th>
-            <th>m-</th>
-            <th>y-</th>
-            <th>r-</th>
-            <th>w-</th>
-            <th>n</th>
-        </tr>
-        {#each kana as row}
-            <tr>
-                {#each row as character}
-                    {#if character.code != "none"}
-                        <td>
+            {#each row as character}
+                {#if character.code != "none"}
+                    <td>
+                        {#if mode === "select"}
+                            <KanaCheckBox
+                                id={character.id}
+                                code={character.code}
+                            />
+                        {:else}
                             <KanaButton
                                 kana={character.code}
                                 syll={character.syll}
                             />
                             <span>{character.syll}</span>
                             <span class="char-id">{character.id}</span>
-                        </td>
-                    {:else}
-                        <td>-</td>
-                    {/if}
-                    {#if character.isLastInRow}
-                        <td class="last-row-item">{row[0].syll.slice(-1)}</td>
-                    {/if}
-                {/each}
-            </tr>
-        {/each}
-    </table>
-</div>
+                        {/if}
+                    </td>
+                {:else}
+                    <td>-</td>
+                {/if}
+                {#if character.isLastInRow}
+                    <td class="last-row-item">{row[0].syll.slice(-1)}</td>
+                {/if}
+            {/each}
+        </tr>
+    {/each}
+</table>

@@ -10,6 +10,13 @@
         width: 100%;
         overflow-y: scroll;
     }
+
+    @media only screen and (min-width: 768px) { 
+        table {
+            display: table;
+            max-width: 700px;
+        }
+    }
 </style>
 
 <table>

@@ -24,7 +24,6 @@
 
 <div class="wrapper">
     <h1 class="main-heading">Kana sensei</h1>
-    <h2 class="sub-heading">Lerne jetzt Katakana und Hiragana</h2>
+    <h2 class="sub-heading">Lerne jetzt Hiragana und Katakana</h2>
     <p class="description">Einfach, kostenlos und ohne Anmeldung</p>
 </div>
-<Footer />

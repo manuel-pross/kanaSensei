@@ -201,3 +201,4 @@
     <Route path="/Lernen"><Learn /></Route>
     <Footer />
 </Router>
+<Footer />
