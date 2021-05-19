@@ -20,7 +20,6 @@
 
     $: if (hiraganaLoaded && katakanaLoaded) {
         $kanas = selectedHiragana.concat(selectedKatakana);
-        console.log($kanas);
     }
 
     onMount(() => {

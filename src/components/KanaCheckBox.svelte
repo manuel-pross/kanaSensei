@@ -1,21 +1,22 @@
 <script>
-    import { kanas } from "./../kana-stores";
+    import { createEventDispatcher } from "svelte";
 
     export let id;
     export let syll;
     export let code;
 
-    // $kanas = [
-    //     {
-    //         id: id,
-    //         syll: syll,
-    //         code: code,
-    //         completed: false,
-    //     },
-    //     ...$kanas,
-    // ];
-
     let checked = true;
+
+    const dispatch = createEventDispatcher();
+
+    function handleCheck(e) {
+        dispatch("checked", {
+            id: id,
+            syll: syll,
+            code: code,
+            checked: checked,
+        });
+    }
 </script>
 
 <style>
@@ -67,6 +68,6 @@
 </style>
 
 <div>
-    <input type="checkbox" {id} bind:checked />
+    <input type="checkbox" {id} bind:checked on:change={handleCheck} />
     <label for={id}>{@html code}</label>
 </div>

@@ -1,9 +1,21 @@
 <script>
+    import { kanas } from "./../kana-stores";
+
     import KanaButton from "./KanaButton.svelte";
     import KanaCheckBox from "./KanaCheckBox.svelte";
 
     export let kana = [];
     export let mode = "show";
+
+    $: console.log($kanas);
+
+    function handleCheck(e) {
+        if (!e.detail.checked) {
+            $kanas = $kanas.filter((el) => el.id !== e.detail.id);
+        } else {
+            $kanas = [...$kanas, e.detail];
+        }
+    }
 </script>
 
 <style>
@@ -89,6 +101,7 @@
                                 id={character.id}
                                 syll={character.syll}
                                 code={character.code}
+                                on:checked={handleCheck}
                             />
                         {:else}
                             <KanaButton
