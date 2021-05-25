@@ -5,7 +5,7 @@
     export let syll;
     export let code;
 
-    let checked = true;
+    let checked = false;
 
     const dispatch = createEventDispatcher();
 

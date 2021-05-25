@@ -6,7 +6,7 @@
     export let text;
 
     function handleClick() {
-        dispatch("btnClicked", { message: "btn clicked" });
+        dispatch("btnClicked");
     }
 </script>
 
