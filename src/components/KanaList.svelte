@@ -7,8 +7,6 @@
     export let kana = [];
     export let mode = "show";
 
-    $: console.log($kanas);
-
     function handleCheck(e) {
         if (!e.detail.checked) {
             $kanas = $kanas.filter((el) => el.id !== e.detail.id);

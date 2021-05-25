@@ -6,6 +6,7 @@
     import KanaList from "../components/KanaList.svelte";
     import LoadingSpinner from "../components/LoadingSpinner.svelte";
     import TabNav from "../components/TabNav.svelte";
+    import Button from "../components/Button.svelte";
 
     let selectedTab = "Hiragana";
     let hiragana = [];
@@ -17,6 +18,8 @@
     let isLoading = true;
     let hiraganaLoaded = false;
     let katakanaLoaded = false;
+
+    let mode = "selecting";
 
     $: if (hiraganaLoaded && katakanaLoaded) {
         $kanas = selectedHiragana.concat(selectedKatakana);
@@ -85,6 +88,10 @@
                 console.log(err);
             });
     });
+
+    function handleClick() {
+        mode = "learning";
+    }
 </script>
 
 <style>
@@ -101,13 +108,18 @@
     {#if isLoading}
         <LoadingSpinner />
     {:else}
-        <div class="selection">
-            <TabNav bind:selectedTab />
-            {#if selectedTab === "Hiragana"}
-                <KanaList kana={hiragana} mode="select" />
-            {:else}
-                <KanaList kana={katakana} mode="select" />
-            {/if}
-        </div>
+        {#if mode === "selecting"}
+            <div class="selection">
+                <TabNav bind:selectedTab />
+                {#if selectedTab === "Hiragana"}
+                    <KanaList kana={hiragana} mode="select" />
+                {:else}
+                    <KanaList kana={katakana} mode="select" />
+                {/if}
+            </div>
+        {:else if mode === "learning"}
+            <p>hello</p>
+        {/if}
+        <Button text={"Start"} on:btnClicked={handleClick}/>
     {/if}
 </div>
