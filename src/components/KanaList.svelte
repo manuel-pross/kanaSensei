@@ -57,12 +57,6 @@
         }
     }
 
-    /* @media only screen and (min-width: 768px) and (orientation: landscape) {
-        table {
-            overflow-y: scroll;
-        }
-    } */
-
     @media only screen and (min-width: 1024px) {
         table {
             max-width: 900px;
@@ -92,7 +86,7 @@
     {#each kana as row}
         <tr>
             {#each row as character}
-                {#if character.code != "none"}
+                {#if character.code !== "none"}
                     <td>
                         {#if mode === "select"}
                             <KanaCheckBox

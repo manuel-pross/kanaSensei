@@ -5,11 +5,11 @@
     export let syll;
     export let code;
 
-    let checked = false;
+    let checked = true;
 
     const dispatch = createEventDispatcher();
 
-    function handleCheck(e) {
+    function handleCheck() {
         dispatch("checked", {
             id: id,
             syll: syll,

@@ -5,8 +5,7 @@
 
     let currentKana = {};
     let answer = "";
-
-    $: console.log(learningKanas);
+    let isAnswerCorrect = true;
 
     onMount(() => {
         currentKana = learningKanas[0];
@@ -19,17 +18,40 @@
 
     function checkAnswer() {
         if (answer.toLowerCase() === currentKana.syll) {
-            console.log("correct");
+            isAnswerCorrect = true;
             learningKanas = learningKanas.filter(
                 (el) => el.id != currentKana.id
             );
             currentKana = learningKanas[0];
+        } else {
+            isAnswerCorrect = false;
         }
+        answer = "";
+    }
+
+    function setFocus(el) {
+        el.focus();
     }
 </script>
 
+<style>
+    .kana {
+        font-size: 1.75rem;
+    }
+</style>
+
 {#if learningKanas.length > 0}
-    <p>{@html currentKana.code}</p>
-    <input type="text" bind:value={answer} on:keyup={handleKeyUp} />
+    {#if !isAnswerCorrect}
+        <p>FALSCH!</p>
+    {/if}
+    <p class="kana">{@html currentKana.code}</p>
+    <input
+        type="text"
+        bind:value={answer}
+        on:keyup={handleKeyUp}
+        use:setFocus
+    />
     <button on:click={checkAnswer}>Bestätigen</button>
+{:else}
+    <p>FERTIG!</p>
 {/if}

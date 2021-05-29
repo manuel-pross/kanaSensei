@@ -39,20 +39,15 @@
                 return res.json();
             })
             .then((data) => {
-                hiragana = data;
+                hiragana = [...data];
 
                 for (let i = 0; i < data.length; i++) {
                     for (let j = 0; j < data[i].length; j++) {
                         if (data[i][j].code !== "none") {
-                            delete data[i][j].isLastInRow;
                             selectedHiragana.push(data[i][j]);
                         }
                     }
                 }
-                selectedHiragana = selectedHiragana.map((obj) => ({
-                    ...obj,
-                    solved: false,
-                }));
 
                 isLoading = false;
                 hiraganaLoaded = true;
@@ -71,20 +66,15 @@
                 return res.json();
             })
             .then((data) => {
-                katakana = data;
+                katakana = [...data];
 
                 for (let i = 0; i < data.length; i++) {
                     for (let j = 0; j < data[i].length; j++) {
                         if (data[i][j].code !== "none") {
-                            delete data[i][j].isLastInRow;
                             selectedKatakana.push(data[i][j]);
                         }
                     }
                 }
-                selectedKatakana = selectedKatakana.map((obj) => ({
-                    ...obj,
-                    solved: false,
-                }));
                 katakanaLoaded = true;
             })
             .catch((err) => {
@@ -129,7 +119,7 @@
             {/if}
         </div>
         <Button text={"Start"} on:btnClicked={handleClick} />
-    {:else if mode === "learning"}
+    {:else}
         <LearningProcess {learningKanas} />
     {/if}
 </div>
